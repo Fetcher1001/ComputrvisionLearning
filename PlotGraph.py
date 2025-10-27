@@ -19,7 +19,7 @@ class PlotGraph:
             title += f"     | Prediction = {pred_label}"
             if prob is not None:
                 title += f"{prob:.1f}%"
-            plt.title(title, color= color, frontsize= 16, pad= 20)
+            plt.title(title, color= color, fontsize= 16, pad= 20)
             plt.axis('off')
             plt.tight_layout()
             plt.show()
@@ -45,9 +45,9 @@ class PlotGraph:
             correct = true_labels[idx_i]
             pred = pred_labels[idx_i]
             color = 'green' if correct == pred else 'red'
-            plt.title(f"True: {correct} to prediction: {pred}",color= color, frontsize= 12)
+            plt.title(f"True: {correct} to prediction: {pred}",color= color, fontsize= 12)
             plt.axis('off')
-        plt.subtitle(title, frontsize = 16, y= 0.95)
+        plt.suptitle(title, fontsize = 16, y= 0.95)
         plt.tight_layout()
         plt.show()
 
@@ -64,7 +64,7 @@ class PlotGraph:
 
         plt.figure(figsize=(10,8))
         sns.heatmap(cm, annot=True, fmt=fmt, cmap='Blues',xticklabels=range(10), yticklabels= range(10))
-        plt.title(title, frontsize= 16)
+        plt.title(title, fontsize= 16)
         plt.ylabel('true label')
         plt.xlabel('Prediction Label')
         plt.tight_layout()
