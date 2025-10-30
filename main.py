@@ -22,14 +22,14 @@ def main():
     for epoch in range(epochs):
         indices = np.random.permutation(len(x_train))
         X_shuffled = x_train[indices]
-        y_suffled = y_train[indices]
+        y_shuffled = y_train[indices]
 
         epoch_loss = 0
         batches = 0
 
         for i in range(0, len(x_train), batch_size):
             x_batch = X_shuffled[i:i+batch_size]
-            y_batch = y_suffled[i:i+batch_size]
+            y_batch = y_shuffled[i:i+batch_size]
 
             loss = nn.train_step(x_batch,y_batch)
             epoch_loss += loss
@@ -42,7 +42,7 @@ def main():
         acc = np.mean(y_pred == y_test)
         accuracies.append(acc)
 
-        print(f"Epoch {epoch+1/epochs}  |   Loss: {avg_loss:.4f}    |   Acc: {acc:.4%}")
+        print(f"Epoch {epoch+1, epochs}  |   Loss: {avg_loss:.4f}    |   Acc: {acc:.4%}")
 
     y_pred_final = nn.predict(x_test)
     final_acc = accuracy_score(y_test, y_pred_final)
@@ -53,9 +53,9 @@ def main():
     PlotGraph.plot_confusion(y_test, y_pred_final, normalize=True)
 
     idx = 0
-    probs = nn.foward_prop(x_test[idx:idx+1])
+    probs = nn.forward_prop(x_test[idx:idx+1])
     PlotGraph.show_single(x_test[idx], y_test[idx], y_pred_final[idx], prob = probs.max() *100)
-    PlotGraph.plot_probailities(probs, y_test[idx])
+    PlotGraph.plot_probabilities(probs, y_test[idx])
 
     PlotGraph.show_grid_pred(x_test,y_test, y_pred_final, only_errors=True)
 

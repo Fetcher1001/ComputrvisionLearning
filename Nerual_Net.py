@@ -31,7 +31,7 @@ class NeuralNet:
         exp_layer = np.exp(layer- np.max(layer, axis=1, keepdims=True))
         return exp_layer/ np.sum(exp_layer,axis=1,keepdims=True)
 
-    def foward_prop(self,input_1):
+    def forward_prop(self,input_1):
         self.h1 = (input_1 @ self.W1) + self.B1
         self.out1 = self.relu(self.h1)
 
