@@ -52,7 +52,7 @@ def main():
 
     PlotGraph.plot_confusion(y_test, y_pred_final, normalize=True)
 
-    idx = 72
+    idx = np.random.randint(0, 5000)
     probs = nn.forward_prop(x_test[idx:idx+1])
     PlotGraph.show_single(x_test[idx], y_test[idx], y_pred_final[idx], prob = probs.max() *100)
     PlotGraph.plot_probabilities(probs, y_test[idx])
