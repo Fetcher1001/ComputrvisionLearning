@@ -1,4 +1,4 @@
-from Requierments import np
+from requierments import *
 
 class NeuralNet:
     def __init__(self, input_size = 784, hidden_size = 128, output_size = 10):
@@ -75,12 +75,12 @@ class NeuralNet:
         self.B1 -= self.learning_rate * delta_B1
 
     def train_step(self, input_data, label):
-        pred = self.foward_prop(input_data)
+        pred = self.forward_prop(input_data)
         loss = self.loss(pred, label)
         self.backprob(input_data, pred, label)
         return loss
 
 
     def predict(self, input_data):
-        pred = self.foward_prop(input_data)
+        pred = self.forward_prop(input_data)
         return np.argmax(pred, axis= 1)

@@ -1,4 +1,4 @@
-from Requierments import np, tf, plt, sns, confusion_matrix, accuracy_score
+from requierments import *
 import Mnist
 import Nerual_Net
 from PlotGraph import PlotGraph
@@ -13,8 +13,8 @@ def main():
 
     nn = Nerual_Net.NeuralNet()
 
-    epochs = 5
-    batch_size= 32
+    epochs = 12
+    batch_size= 64
 
     losses = []
     accuracies = []
@@ -42,7 +42,7 @@ def main():
         acc = np.mean(y_pred == y_test)
         accuracies.append(acc)
 
-        print(f"Epoch {epoch+1, epochs}  |   Loss: {avg_loss:.4f}    |   Acc: {acc:.4%}")
+        print(f"Epoch {epoch+1}/{epochs}  |   Loss: {avg_loss:.4f}    |   Acc: {acc:.4%}")
 
     y_pred_final = nn.predict(x_test)
     final_acc = accuracy_score(y_test, y_pred_final)
@@ -52,7 +52,7 @@ def main():
 
     PlotGraph.plot_confusion(y_test, y_pred_final, normalize=True)
 
-    idx = 0
+    idx = 72
     probs = nn.forward_prop(x_test[idx:idx+1])
     PlotGraph.show_single(x_test[idx], y_test[idx], y_pred_final[idx], prob = probs.max() *100)
     PlotGraph.plot_probabilities(probs, y_test[idx])

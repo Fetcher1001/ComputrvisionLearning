@@ -1,9 +1,8 @@
-from Requierments import *
+from requierments import *
 
 
 class PlotGraph:
     def __init__(self):
-        plt.figure(figsize=(6,6))
         sns.set_style("whitegrid")
 
 
@@ -87,7 +86,7 @@ class PlotGraph:
         if accuracies:
             plt.subplot(1,2,2)
             plt.plot(epochs,accuracies, 'g-o', label = 'Accuracy')
-            plt.title('Training Accuaracy')
+            plt.title('Training Accuracy')
             plt.xlabel('Epoch')
             plt.ylabel('Accuracy')
             plt.legend()
@@ -97,7 +96,7 @@ class PlotGraph:
         plt.show()
 
     @staticmethod
-    def plot_probailities(probabilities, true_label, top_k=5):
+    def plot_probabilities(probabilities, true_label, top_k=5):
         probs = probabilities[0]
         pred_label = np.argmax(probs)
 
