@@ -35,7 +35,7 @@ class NeuralNet:
         self.h1 = (input_1 @ self.W1) + self.B1
         self.out1 = self.relu(self.h1)
 
-        self.h2 = (self.h1 @ self.W2) + self.B2
+        self.h2 = (self.out1 @ self.W2) + self.B2
         self.out2 = self.softmax(self.h2)
 
         return self.out2
@@ -48,7 +48,6 @@ class NeuralNet:
         loss = -np.sum(one_hot * np.log(prediction+ 1e-8)) /m # loss funktion 1e-8 prventing -infinety in log
 
         return loss
-
 
     def backprob(self, input_l, prediction, truth):
         m = input_l.shape[0]
@@ -65,7 +64,7 @@ class NeuralNet:
         delta_a1 = delta_a2 @ self.W2.T
         loss_grad = delta_a1 * self.relu_deriv(self.h1)
         delta_W1 = (input_l.T @ loss_grad) / m
-        delta_B1 = np.sum(loss_grad, axis=0, keepdims= True) / m
+        delta_B1 = np.sum(loss_grad, axis=0, keepdims= True)
 
         #Update weights
 
