@@ -1,3 +1,6 @@
+import numpy as np
+import tensorflow as tf
+
 class NeuralNet:
     def __init__(self, input_size = 784, hidden_size = 28, output_size = 10):
         
