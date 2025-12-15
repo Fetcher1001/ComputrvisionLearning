@@ -13,8 +13,8 @@ def main():
 
     nn = Nerual_Net.NeuralNet()
 
-    epochs = 12
-    batch_size= 64
+    epochs = 100
+    batch_size= 6
 
     losses = []
     accuracies = []
