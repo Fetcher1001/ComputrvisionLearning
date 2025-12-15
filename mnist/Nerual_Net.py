@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+import numpy as np
+import tensorflow as tf
+=======
 from requierments import *
+>>>>>>> df4dfab4abb1037813eb34a827e7a9d174e76875
 
 class NeuralNet:
     def __init__(self, input_size = 784, hidden_size = 128, output_size = 10):
