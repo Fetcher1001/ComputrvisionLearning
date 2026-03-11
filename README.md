@@ -1,17 +1,17 @@
-## ComputerVisionLearning-1
+## Computer Vision Learning
 
 A repository for learning computer vision and experimentation around computer vision concepts.
 
-Minimal, hands-on computer vision experiments — classification, detection, and small demos.
+Minimal, hands-on computer vision experiments classification, detection, and small demos.
 
 ![Project screenshot](doc/Screenshot%202026-03-11%20125018.png)
 
 ## Repo layout
-- data/                — datasets (train / val / test)
-- doc/                 — documentation and screenshots
-- edge_detection/      — edge detection demo (scripts and images)
-- Experimentation/     — notebooks and pictures used during experiments
-- mnist/               — MNIST examples, notebooks and training scripts
+- data/          datasets (train / val / test)
+- doc/                 documentation and screenshots
+- edge_detection/      edge detection demo (scripts and images)
+- Experimentation/     notebooks and pictures used during experiments
+- mnist/                MNIST examples, notebooks and training scripts
 - LICENSE
 - README.md
 
