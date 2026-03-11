@@ -1,4 +1,6 @@
-# ComputrvisionLearning-1
+## ComputerVisionLearning-1
+
+A repository for learning computer vision and experimentation around computer vision concepts.
 
 Minimal, hands-on computer vision experiments — classification, detection, and small demos.
 
