@@ -12,8 +12,8 @@ class NeuralNet_Pytorch(nn.Module):
     def __init__(self, input_size = 784, hidden_size = 128, output_size = 10):
         super().__init__()
         self.layer1 = nn.Linear(input_size, hidden_size)
-        self.relu =nn.ReLU
-        self.layer2 = (hidden_size, output_size)
+        self.relu =nn.ReLU()
+        self.layer2 = nn.Linear(hidden_size, output_size)
 
     def forward(self, input_1):
         out = self.layer1(input_1)

@@ -1,4 +1,4 @@
-from requierments import *
+from Requierments import *
 import Mnist
 import Nerual_Net
 from PlotGraph import PlotGraph

@@ -1,4 +1,4 @@
-from requierments import *
+from Requierments import *
 
 
 class PlotGraph:

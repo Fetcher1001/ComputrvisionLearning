@@ -1,4 +1,4 @@
-from requierments import np, tf
+from Requierments import np, tf
 class MNIST_Dataset:
     def __init__(self,):
         self.dataset = tf.keras.datasets.mnist.load_data()
